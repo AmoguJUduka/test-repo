@@ -21,3 +21,10 @@ class Employee:
 emp_1 = Employee("Johnson","Uduka",100000)
 emp_2 = Employee("Olive","Uduka", 80000)
 
+<<<<<<< HEAD
+=======
+print(emp_1.apply_raise())
+print(Employee.num_of_emps)
+#print(Employee.__dict__)
+
+>>>>>>> 53090d7ee3eeece74e5759f0c5f7bd1ac5365550
