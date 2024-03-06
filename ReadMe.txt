@@ -1,1 +1,2 @@
 I am trying to upskill on my python ability by coding for at least 30 minutes everyday in the month of March.
+Hopefully, I can achieve this goal in the midst of so many responsibilities both at school and home.
