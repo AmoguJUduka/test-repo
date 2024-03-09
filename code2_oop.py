@@ -27,7 +27,7 @@ class Item:
             items = list(reader)
 
         for item in items:
-            Item(
+            cls(
                 name=item.get('name'),
                 price=int(item.get('price')),
                 quantity=int(item.get('quantity'))
