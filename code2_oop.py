@@ -2,7 +2,7 @@ import csv
 
 class Item:
     pay_rate = 0.8 #The pay rate after 20% discount
-    all = []
+    all_items = []
     def __init__(self, name: str, price: float, quantity=0):
         # Run validations to the received arguments
         assert quantity >= 0,("Your quantity cannot be less than zero")
@@ -12,7 +12,7 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
-        Item.all.append(self)
+        Item.all_items.append(self)
 
     def calculate_total_price(self):
         return self.price * self.quantity
@@ -47,4 +47,16 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price},{self.quantity})"
     
-#print(Item.is_integer(0))
+
+
+class Phone(Item):
+    all_phones = []
+    def __init__(self, name, price, quantity, broken_phones):
+        super().__init__(name, price, quantity)
+        self.broken_phones = broken_phones
+
+        Phone.all_phones.append(self)
+
+phone1 = Phone("Nokia", 500, 5, 1)
+phone2 = Phone("Samsung", 700, 5, 1)
+
