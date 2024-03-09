@@ -32,7 +32,7 @@ class Item:
                 price=int(item.get('price')),
                 quantity=int(item.get('quantity'))
             )
-
+    @staticmethod        
     def is_integer(num):
         #We will count out the floats that are point zero
         #For example: 5.0,10.0
