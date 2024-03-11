@@ -48,5 +48,16 @@ class Item:
         return f"Item('{self.name}', {self.price},{self.quantity})"
     
     @property
-    def read_only_name(self):
-        return "AAA"
+    def name_(self):
+        return self.name
+    
+    @name_.setter
+    def name_(self, name):
+        self.name = name
+    
+
+item1 = Item("Nokia", 20030, 4)
+item1.name = "Quantity"
+print(item1.name)
+    
+ 
