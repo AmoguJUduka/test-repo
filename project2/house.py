@@ -26,11 +26,5 @@ class House(Property):
         parent_init.update({"fenced":fenced,"garage":garage,"num_stories":num_stories})
         return parent_init
 
-#a = Property('43', '2', '54')
-house_details = House.prompt_init()
-b = House(**house_details)
-b.display()
-#b.display()
-#print()
-#a.display()
+
     
