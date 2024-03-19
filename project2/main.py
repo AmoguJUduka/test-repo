@@ -1,6 +1,8 @@
 from apartment import Apartment
 from house import House
 from property import Property
-from purchase_rental import Purchase, Rental, HouseRental
+from purchase_rental import Purchase, Rental, HouseRental, Agent
 
-init = HouseRental.prompt_init()
+agent = Agent()
+agent.add_property()
+agent.add_property()
