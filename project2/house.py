@@ -25,7 +25,7 @@ class House(Property):
 
         parent_init.update({"fenced":fenced,"garage":garage,"num_stories":num_stories})
         return parent_init
-    
+
 
 
 
