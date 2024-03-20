@@ -16,7 +16,7 @@ class Purchase:
 
     @staticmethod
     def prompt_init():
-        return dict(price = input("Selling Price?", taxes = input("Estimated Taxes")))
+        return dict(price = input("Selling Price?"), taxes = input("Estimated Taxes"))
     
 class Rental:
     def __init__(self,furnished='',utilities='',rent='',**kwargs):
@@ -42,6 +42,13 @@ class HouseRental(Rental, House):
         init = House.prompt_init()
         init.update(Rental.prompt_init())
         return init
+    
+class ApartmentRental(Rental, Apartment):
+    @staticmethod
+    def prompt_init():
+        init = Apartment.prompt_init()
+        init.update(Rental.prompt_init())
+        return init
 
 class ApartmentPurchase(Purchase, Apartment):
     @staticmethod
@@ -57,28 +64,24 @@ class HousePurchase(Purchase, House):
         init.update(Purchase.prompt_init())
         return init
     
-class ApartmentRental(Rental, Apartment):
-    @staticmethod
-    def prompt_init():
-        init = Apartment.prompt_init()
-        init.update(Rental.prompt_init())
-        return init
+
     
 
 class Agent:
 
-    type_map = {
-        ("house","rental") : HouseRental,
-        ("house","purchase"): HousePurchase,
-        ("apartment","rental") : ApartmentRental,
-        ("apartment","purchase"): ApartmentPurchase,
-    }
     def __init__(self):
         self.property_list = []
 
     def display_properties(self):
         for property in self.property_list:
             property.display()
+
+    type_map = {
+        ("house","rental") : HouseRental,
+        ("house","purchase"): HousePurchase,
+        ("apartment","rental") : ApartmentRental,
+        ("apartment","purchase"): ApartmentPurchase
+    }
 
     def add_property(self):
         property_type = Property.get_valid_input(
