@@ -93,3 +93,4 @@ class Agent:
         init_args = PropertyClass.prompt_init()
         self.property_list.append(PropertyClass(**init_args))
         
+        
