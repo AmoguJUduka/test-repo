@@ -14,13 +14,12 @@ class Property:
 
     @staticmethod
     def get_valid_input(input_string, valid_options):
-        input_string = input_string + "({})".format(",".join(valid_options))
-        response = input(input_string)
-        while response.lower() not in valid_options:
-            response = input(input_string)
-        return response
+        while True:
+            response = input(f"{input_string}({','.join(valid_options)})").replace(" ","")
+            if response.lower() in valid_options:
+                return response.lower()
 
-    @staticmethod
+    @staticmethod     
     def prompt_init():
         return dict(
             square_feet=input("Enter the square feet: "),
