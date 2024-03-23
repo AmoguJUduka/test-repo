@@ -36,28 +36,28 @@ class Rental:
     def prompt_init():
         return dict(rent=input("What is the monthly rent?"),utilities=input("What are the estimated utilities?"),furnished=Property.get_valid_input("is the property furnished? ",("yes","no")))
     
-class HouseRental(Rental, House):
+class HouseRental(Rental, House):  #This serves as a mixin
     @staticmethod
     def prompt_init():
         init = House.prompt_init()
         init.update(Rental.prompt_init())
         return init
     
-class ApartmentRental(Rental, Apartment):
+class ApartmentRental(Rental, Apartment): # mixin2
     @staticmethod
     def prompt_init():
         init = Apartment.prompt_init()
         init.update(Rental.prompt_init())
         return init
 
-class ApartmentPurchase(Purchase, Apartment):
+class ApartmentPurchase(Purchase, Apartment): #mixin3
     @staticmethod
     def prompt_init():
         init = Apartment.prompt_init()
         init.update(Purchase.prompt_init())
         return init
     
-class HousePurchase(Purchase, House):
+class HousePurchase(Purchase, House): # mixin5
     @staticmethod
     def prompt_init():
         init = House.prompt_init()

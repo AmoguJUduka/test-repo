@@ -28,5 +28,4 @@ class House(Property):
 
 
 
-
     
